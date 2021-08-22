@@ -8,9 +8,12 @@
 import UIKit
 
 class PostImageCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    var images : [String]!
+    
+    init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout, images: [String]) {
+        self.images = images
         super.init(frame: frame, collectionViewLayout: layout)
-        register(PostImageCollectionViewCell.self, forCellWithReuseIdentifier: "ImageCell")
+        register(PostImageCollectionViewCell.self, forCellWithReuseIdentifier: "PostImageCollectionViewCell")
         backgroundColor = .init(white: 0.7, alpha: 1)
         dataSource = self
         delegate = self
@@ -18,6 +21,10 @@ class PostImageCollectionView: UICollectionView, UICollectionViewDataSource, UIC
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        images = nil
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -33,12 +40,12 @@ class PostImageCollectionView: UICollectionView, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! PostImageCollectionViewCell
-        cell.setupImage(index: indexPath.row)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostImageCollectionViewCell", for: indexPath) as! PostImageCollectionViewCell
+        cell.setupImage(image: images[0])
         return cell
     }
 }

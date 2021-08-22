@@ -8,14 +8,23 @@
 import UIKit
 
 class PostHeaderStackView: UIStackView {
-    let profileImageView = UIImageView()
+    var nameDateStackView: UIStackView!
 
-    var nameDateStackView = UIStackView()
-    let nameLabel = UILabel()
-    let dateLabel = UILabel()
+    var profileImageView: UIImageView!
+    var profileImage: String!
     
-    override init(frame: CGRect) {
+    var nameLabel: UILabel!
+    var name: String!
+
+    var dateLabel: UILabel!
+    var date: String!
+    
+    init(frame: CGRect, profileImage: String, name: String, date: String) {
+        self.profileImage = profileImage
+        self.name = name
+        self.date = date
         super.init(frame: frame)
+        
         translatesAutoresizingMaskIntoConstraints = false
         axis = .horizontal
         spacing = 8
@@ -25,7 +34,7 @@ class PostHeaderStackView: UIStackView {
             trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
 
-        setupImageView()
+        setupProfileImageView()
         setupNameLabel()
         setupDateLabel()
         setupNameDateStackView()
@@ -35,8 +44,26 @@ class PostHeaderStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupImageView() {
-        profileImageView.backgroundColor = .red
+    deinit {
+        profileImageView.removeFromSuperview()
+        profileImageView = nil
+        profileImage = nil
+        
+        nameLabel.removeFromSuperview()
+        nameLabel = nil
+        name = nil
+        
+        dateLabel.removeFromSuperview()
+        dateLabel = nil
+        date = nil
+        
+        nameDateStackView.removeFromSuperview()
+        nameDateStackView = nil
+    }
+    
+    func setupProfileImageView() {
+        profileImageView = UIImageView()
+        profileImageView.backgroundColor = .gray
         addArrangedSubview(profileImageView)
         NSLayoutConstraint.activate([
             profileImageView.topAnchor.constraint(equalTo: topAnchor),
@@ -46,14 +73,17 @@ class PostHeaderStackView: UIStackView {
     }
     
     func setupNameLabel() {
-        nameLabel.text = "Name Labelllllllllllllllllllll"
+        nameLabel = UILabel()
+        nameLabel.text = name
     }
     
     func setupDateLabel() {
-        dateLabel.text = "6/66/6666"
+        dateLabel = UILabel()
+        dateLabel.text = date
     }
     
     func setupNameDateStackView() {
+        nameDateStackView = UIStackView()
         nameDateStackView.addArrangedSubview(nameLabel)
         nameDateStackView.addArrangedSubview(dateLabel)
         nameDateStackView.translatesAutoresizingMaskIntoConstraints = false

@@ -8,6 +8,8 @@
 import UIKit
 
 class PostImageCollectionViewCell: UICollectionViewCell {
+    var imageView: UIImageView!
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -17,10 +19,16 @@ class PostImageCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupImage(index: Int) {
-        let imageView = UIImageView(frame: bounds)
-//        imageView.image = UIImage(named: "Jordan1_\(index + 1)")
-        imageView.image = UIImage(named: "Jordan1_1")
+    override func prepareForReuse() {
+        imageView.removeFromSuperview()
+        imageView = nil
+    }
+    
+    func setupImage(image: String) {
+        imageView = UIImageView(frame: bounds)
+        let url = URL(string: image)!
+        imageView.downloadImage(from: url)
+//        imageView.image = UIImage(named: "Jordan1_3")
         imageView.contentMode = .scaleAspectFit
         contentView.addSubview(imageView)
     }

@@ -7,6 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C25940E926D0B937005984E6 /* StoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25940E826D0B937005984E6 /* StoryCollectionView.swift */; };
+		C25940EC26D0C54C005984E6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25940EB26D0C54C005984E6 /* Post.swift */; };
+		C25940F826D0EB76005984E6 /* jordan1s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940EE26D0EB76005984E6 /* jordan1s.csv */; };
+		C25940F926D0EB76005984E6 /* jordan6s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940EF26D0EB76005984E6 /* jordan6s.csv */; };
+		C25940FA26D0EB76005984E6 /* jordan7s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940F026D0EB76005984E6 /* jordan7s.csv */; };
+		C25940FB26D0EB76005984E6 /* jordan4s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940F126D0EB76005984E6 /* jordan4s.csv */; };
+		C25940FC26D0EB76005984E6 /* jordan10s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940F226D0EB76005984E6 /* jordan10s.csv */; };
+		C25940FD26D0EB76005984E6 /* jordan8s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940F326D0EB76005984E6 /* jordan8s.csv */; };
+		C25940FE26D0EB76005984E6 /* jordan9s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940F426D0EB76005984E6 /* jordan9s.csv */; };
+		C25940FF26D0EB76005984E6 /* jordan5s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940F526D0EB76005984E6 /* jordan5s.csv */; };
+		C259410026D0EB76005984E6 /* jordan2s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940F626D0EB76005984E6 /* jordan2s.csv */; };
+		C259410126D0EB76005984E6 /* jordan3s.csv in Resources */ = {isa = PBXBuildFile; fileRef = C25940F726D0EB76005984E6 /* jordan3s.csv */; };
+		C259410426D0F8A5005984E6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C259410326D0F8A5005984E6 /* Extensions.swift */; };
+		C259411D26D21186005984E6 /* jordan15.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410626D21185005984E6 /* jordan15.csv */; };
+		C259411E26D21186005984E6 /* jordan8.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410726D21185005984E6 /* jordan8.csv */; };
+		C259411F26D21186005984E6 /* jordan11.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410826D21185005984E6 /* jordan11.csv */; };
+		C259412026D21186005984E6 /* jordan7.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410926D21185005984E6 /* jordan7.csv */; };
+		C259412126D21186005984E6 /* jordan4.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410A26D21185005984E6 /* jordan4.csv */; };
+		C259412226D21186005984E6 /* jordan16.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410B26D21185005984E6 /* jordan16.csv */; };
+		C259412326D21186005984E6 /* jordan20.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410C26D21185005984E6 /* jordan20.csv */; };
+		C259412426D21186005984E6 /* jordan1.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410D26D21185005984E6 /* jordan1.csv */; };
+		C259412526D21186005984E6 /* jordan22.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410E26D21185005984E6 /* jordan22.csv */; };
+		C259412626D21186005984E6 /* jordan19.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259410F26D21186005984E6 /* jordan19.csv */; };
+		C259412726D21186005984E6 /* jordan5.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411026D21186005984E6 /* jordan5.csv */; };
+		C259412826D21186005984E6 /* jordan13.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411126D21186005984E6 /* jordan13.csv */; };
+		C259412926D21186005984E6 /* jordan23.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411226D21186005984E6 /* jordan23.csv */; };
+		C259412A26D21186005984E6 /* jordan12.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411326D21186005984E6 /* jordan12.csv */; };
+		C259412B26D21186005984E6 /* jordan18.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411426D21186005984E6 /* jordan18.csv */; };
+		C259412C26D21186005984E6 /* jordan14.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411526D21186005984E6 /* jordan14.csv */; };
+		C259412D26D21186005984E6 /* jordan6.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411626D21186005984E6 /* jordan6.csv */; };
+		C259412E26D21186005984E6 /* jordan10.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411726D21186005984E6 /* jordan10.csv */; };
+		C259412F26D21186005984E6 /* jordan3.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411826D21186005984E6 /* jordan3.csv */; };
+		C259413026D21186005984E6 /* jordan2.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411926D21186005984E6 /* jordan2.csv */; };
+		C259413126D21186005984E6 /* jordan9.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411A26D21186005984E6 /* jordan9.csv */; };
+		C259413226D21186005984E6 /* jordan17.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411B26D21186005984E6 /* jordan17.csv */; };
+		C259413326D21186005984E6 /* jordan21.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411C26D21186005984E6 /* jordan21.csv */; };
 		C2AE00C326CC8FB700BF56C4 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE00C226CC8FB700BF56C4 /* PostCollectionViewCell.swift */; };
 		C2AE00C726CC942100BF56C4 /* PostImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE00C626CC942100BF56C4 /* PostImageCollectionViewCell.swift */; };
 		C2AE00C926CC947C00BF56C4 /* PostCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE00C826CC947C00BF56C4 /* PostCollectionView.swift */; };
@@ -14,7 +50,6 @@
 		C2AE00CE26CC9A5700BF56C4 /* PostHeaderStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE00CD26CC9A5700BF56C4 /* PostHeaderStackView.swift */; };
 		C2DD386726CB3EE100216ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DD386626CB3EE100216ED4 /* AppDelegate.swift */; };
 		C2DD386926CB3EE100216ED4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DD386826CB3EE100216ED4 /* SceneDelegate.swift */; };
-		C2DD386B26CB3EE100216ED4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DD386A26CB3EE100216ED4 /* ContentView.swift */; };
 		C2DD386D26CB3EE300216ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2DD386C26CB3EE300216ED4 /* Assets.xcassets */; };
 		C2DD387026CB3EE300216ED4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2DD386F26CB3EE300216ED4 /* Preview Assets.xcassets */; };
 		C2DD387326CB3EE300216ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2DD387126CB3EE300216ED4 /* LaunchScreen.storyboard */; };
@@ -22,6 +57,42 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C25940E826D0B937005984E6 /* StoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionView.swift; sourceTree = "<group>"; };
+		C25940EB26D0C54C005984E6 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		C25940EE26D0EB76005984E6 /* jordan1s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan1s.csv; sourceTree = "<group>"; };
+		C25940EF26D0EB76005984E6 /* jordan6s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan6s.csv; sourceTree = "<group>"; };
+		C25940F026D0EB76005984E6 /* jordan7s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan7s.csv; sourceTree = "<group>"; };
+		C25940F126D0EB76005984E6 /* jordan4s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan4s.csv; sourceTree = "<group>"; };
+		C25940F226D0EB76005984E6 /* jordan10s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan10s.csv; sourceTree = "<group>"; };
+		C25940F326D0EB76005984E6 /* jordan8s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan8s.csv; sourceTree = "<group>"; };
+		C25940F426D0EB76005984E6 /* jordan9s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan9s.csv; sourceTree = "<group>"; };
+		C25940F526D0EB76005984E6 /* jordan5s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan5s.csv; sourceTree = "<group>"; };
+		C25940F626D0EB76005984E6 /* jordan2s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan2s.csv; sourceTree = "<group>"; };
+		C25940F726D0EB76005984E6 /* jordan3s.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan3s.csv; sourceTree = "<group>"; };
+		C259410326D0F8A5005984E6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C259410626D21185005984E6 /* jordan15.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan15.csv; sourceTree = "<group>"; };
+		C259410726D21185005984E6 /* jordan8.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan8.csv; sourceTree = "<group>"; };
+		C259410826D21185005984E6 /* jordan11.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan11.csv; sourceTree = "<group>"; };
+		C259410926D21185005984E6 /* jordan7.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan7.csv; sourceTree = "<group>"; };
+		C259410A26D21185005984E6 /* jordan4.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan4.csv; sourceTree = "<group>"; };
+		C259410B26D21185005984E6 /* jordan16.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan16.csv; sourceTree = "<group>"; };
+		C259410C26D21185005984E6 /* jordan20.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan20.csv; sourceTree = "<group>"; };
+		C259410D26D21185005984E6 /* jordan1.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan1.csv; sourceTree = "<group>"; };
+		C259410E26D21185005984E6 /* jordan22.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan22.csv; sourceTree = "<group>"; };
+		C259410F26D21186005984E6 /* jordan19.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan19.csv; sourceTree = "<group>"; };
+		C259411026D21186005984E6 /* jordan5.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan5.csv; sourceTree = "<group>"; };
+		C259411126D21186005984E6 /* jordan13.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan13.csv; sourceTree = "<group>"; };
+		C259411226D21186005984E6 /* jordan23.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan23.csv; sourceTree = "<group>"; };
+		C259411326D21186005984E6 /* jordan12.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan12.csv; sourceTree = "<group>"; };
+		C259411426D21186005984E6 /* jordan18.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan18.csv; sourceTree = "<group>"; };
+		C259411526D21186005984E6 /* jordan14.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan14.csv; sourceTree = "<group>"; };
+		C259411626D21186005984E6 /* jordan6.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan6.csv; sourceTree = "<group>"; };
+		C259411726D21186005984E6 /* jordan10.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan10.csv; sourceTree = "<group>"; };
+		C259411826D21186005984E6 /* jordan3.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan3.csv; sourceTree = "<group>"; };
+		C259411926D21186005984E6 /* jordan2.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan2.csv; sourceTree = "<group>"; };
+		C259411A26D21186005984E6 /* jordan9.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan9.csv; sourceTree = "<group>"; };
+		C259411B26D21186005984E6 /* jordan17.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan17.csv; sourceTree = "<group>"; };
+		C259411C26D21186005984E6 /* jordan21.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan21.csv; sourceTree = "<group>"; };
 		C2AE00C226CC8FB700BF56C4 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2AE00C626CC942100BF56C4 /* PostImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2AE00C826CC947C00BF56C4 /* PostCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionView.swift; sourceTree = "<group>"; };
@@ -30,7 +101,6 @@
 		C2DD386326CB3EE100216ED4 /* FacebookClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2DD386626CB3EE100216ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2DD386826CB3EE100216ED4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C2DD386A26CB3EE100216ED4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C2DD386C26CB3EE300216ED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2DD386F26CB3EE300216ED4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C2DD387226CB3EE300216ED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,7 +119,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C2AE00CC26CC991500BF56C4 /* Posts */ = {
+		C25940E726D0B912005984E6 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				C25940E826D0B937005984E6 /* StoryCollectionView.swift */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
+		C25940EA26D0C52C005984E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C25940EB26D0C54C005984E6 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C25940ED26D0EB76005984E6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C259410526D21172005984E6 /* Jordans */,
+				C25940EE26D0EB76005984E6 /* jordan1s.csv */,
+				C25940EF26D0EB76005984E6 /* jordan6s.csv */,
+				C25940F026D0EB76005984E6 /* jordan7s.csv */,
+				C25940F126D0EB76005984E6 /* jordan4s.csv */,
+				C25940F226D0EB76005984E6 /* jordan10s.csv */,
+				C25940F326D0EB76005984E6 /* jordan8s.csv */,
+				C25940F426D0EB76005984E6 /* jordan9s.csv */,
+				C25940F526D0EB76005984E6 /* jordan5s.csv */,
+				C25940F626D0EB76005984E6 /* jordan2s.csv */,
+				C25940F726D0EB76005984E6 /* jordan3s.csv */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C259410226D0F885005984E6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C259410326D0F8A5005984E6 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C259410526D21172005984E6 /* Jordans */ = {
+			isa = PBXGroup;
+			children = (
+				C259410D26D21185005984E6 /* jordan1.csv */,
+				C259411926D21186005984E6 /* jordan2.csv */,
+				C259411826D21186005984E6 /* jordan3.csv */,
+				C259410A26D21185005984E6 /* jordan4.csv */,
+				C259411026D21186005984E6 /* jordan5.csv */,
+				C259411626D21186005984E6 /* jordan6.csv */,
+				C259410926D21185005984E6 /* jordan7.csv */,
+				C259410726D21185005984E6 /* jordan8.csv */,
+				C259411A26D21186005984E6 /* jordan9.csv */,
+				C259411726D21186005984E6 /* jordan10.csv */,
+				C259410826D21185005984E6 /* jordan11.csv */,
+				C259411326D21186005984E6 /* jordan12.csv */,
+				C259411126D21186005984E6 /* jordan13.csv */,
+				C259411526D21186005984E6 /* jordan14.csv */,
+				C259410626D21185005984E6 /* jordan15.csv */,
+				C259410B26D21185005984E6 /* jordan16.csv */,
+				C259411B26D21186005984E6 /* jordan17.csv */,
+				C259411426D21186005984E6 /* jordan18.csv */,
+				C259410F26D21186005984E6 /* jordan19.csv */,
+				C259410C26D21185005984E6 /* jordan20.csv */,
+				C259411C26D21186005984E6 /* jordan21.csv */,
+				C259410E26D21185005984E6 /* jordan22.csv */,
+				C259411226D21186005984E6 /* jordan23.csv */,
+			);
+			path = Jordans;
+			sourceTree = "<group>";
+		};
+		C2AE00CC26CC991500BF56C4 /* Post */ = {
 			isa = PBXGroup;
 			children = (
 				C2AE00C826CC947C00BF56C4 /* PostCollectionView.swift */,
@@ -58,7 +200,7 @@
 				C2AE00CD26CC9A5700BF56C4 /* PostHeaderStackView.swift */,
 				C2AE00C626CC942100BF56C4 /* PostImageCollectionViewCell.swift */,
 			);
-			path = Posts;
+			path = Post;
 			sourceTree = "<group>";
 		};
 		C2DD385A26CB3EE100216ED4 = {
@@ -80,10 +222,13 @@
 		C2DD386526CB3EE100216ED4 /* FacebookClone */ = {
 			isa = PBXGroup;
 			children = (
-				C2AE00CC26CC991500BF56C4 /* Posts */,
+				C259410226D0F885005984E6 /* Extensions */,
+				C25940ED26D0EB76005984E6 /* Data */,
+				C25940EA26D0C52C005984E6 /* Models */,
+				C25940E726D0B912005984E6 /* Story */,
+				C2AE00CC26CC991500BF56C4 /* Post */,
 				C2DD386626CB3EE100216ED4 /* AppDelegate.swift */,
 				C2DD386826CB3EE100216ED4 /* SceneDelegate.swift */,
-				C2DD386A26CB3EE100216ED4 /* ContentView.swift */,
 				C2DD387A26CB3F3800216ED4 /* HomeViewController.swift */,
 				C2DD386C26CB3EE300216ED4 /* Assets.xcassets */,
 				C2DD387126CB3EE300216ED4 /* LaunchScreen.storyboard */,
@@ -158,9 +303,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C25940F826D0EB76005984E6 /* jordan1s.csv in Resources */,
+				C259412426D21186005984E6 /* jordan1.csv in Resources */,
+				C259412A26D21186005984E6 /* jordan12.csv in Resources */,
+				C259412526D21186005984E6 /* jordan22.csv in Resources */,
+				C259412926D21186005984E6 /* jordan23.csv in Resources */,
+				C259412126D21186005984E6 /* jordan4.csv in Resources */,
+				C259412326D21186005984E6 /* jordan20.csv in Resources */,
+				C259412D26D21186005984E6 /* jordan6.csv in Resources */,
+				C25940FC26D0EB76005984E6 /* jordan10s.csv in Resources */,
+				C25940FF26D0EB76005984E6 /* jordan5s.csv in Resources */,
+				C25940FE26D0EB76005984E6 /* jordan9s.csv in Resources */,
+				C259413326D21186005984E6 /* jordan21.csv in Resources */,
+				C259412026D21186005984E6 /* jordan7.csv in Resources */,
+				C25940FD26D0EB76005984E6 /* jordan8s.csv in Resources */,
+				C259410026D0EB76005984E6 /* jordan2s.csv in Resources */,
+				C259411F26D21186005984E6 /* jordan11.csv in Resources */,
+				C259412826D21186005984E6 /* jordan13.csv in Resources */,
 				C2DD387326CB3EE300216ED4 /* LaunchScreen.storyboard in Resources */,
+				C25940FA26D0EB76005984E6 /* jordan7s.csv in Resources */,
+				C25940F926D0EB76005984E6 /* jordan6s.csv in Resources */,
+				C259413026D21186005984E6 /* jordan2.csv in Resources */,
+				C259413126D21186005984E6 /* jordan9.csv in Resources */,
 				C2DD387026CB3EE300216ED4 /* Preview Assets.xcassets in Resources */,
+				C259412C26D21186005984E6 /* jordan14.csv in Resources */,
+				C259412726D21186005984E6 /* jordan5.csv in Resources */,
+				C259412F26D21186005984E6 /* jordan3.csv in Resources */,
+				C259412626D21186005984E6 /* jordan19.csv in Resources */,
+				C259412B26D21186005984E6 /* jordan18.csv in Resources */,
+				C259411E26D21186005984E6 /* jordan8.csv in Resources */,
+				C25940FB26D0EB76005984E6 /* jordan4s.csv in Resources */,
 				C2DD386D26CB3EE300216ED4 /* Assets.xcassets in Resources */,
+				C259411D26D21186005984E6 /* jordan15.csv in Resources */,
+				C259412226D21186005984E6 /* jordan16.csv in Resources */,
+				C259413226D21186005984E6 /* jordan17.csv in Resources */,
+				C259410126D0EB76005984E6 /* jordan3s.csv in Resources */,
+				C259412E26D21186005984E6 /* jordan10.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,12 +352,14 @@
 				C2AE00CB26CC970400BF56C4 /* PostImageCollectionView.swift in Sources */,
 				C2DD387B26CB3F3800216ED4 /* HomeViewController.swift in Sources */,
 				C2DD386726CB3EE100216ED4 /* AppDelegate.swift in Sources */,
+				C25940E926D0B937005984E6 /* StoryCollectionView.swift in Sources */,
 				C2DD386926CB3EE100216ED4 /* SceneDelegate.swift in Sources */,
 				C2AE00CE26CC9A5700BF56C4 /* PostHeaderStackView.swift in Sources */,
-				C2DD386B26CB3EE100216ED4 /* ContentView.swift in Sources */,
 				C2AE00C926CC947C00BF56C4 /* PostCollectionView.swift in Sources */,
 				C2AE00C326CC8FB700BF56C4 /* PostCollectionViewCell.swift in Sources */,
 				C2AE00C726CC942100BF56C4 /* PostImageCollectionViewCell.swift in Sources */,
+				C259410426D0F8A5005984E6 /* Extensions.swift in Sources */,
+				C25940EC26D0C54C005984E6 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
