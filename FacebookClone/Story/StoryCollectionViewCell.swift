@@ -1,14 +1,15 @@
 //
-//  PostImageCollectionViewCell.swift
+//  StoryCollectionViewCell.swift
 //  FacebookClone
 //
-//  Created by Brandon B on 8/17/21.
+//  Created by Brandon B on 8/22/21.
 //
 
 import UIKit
 
-class PostImageCollectionViewCell: UICollectionViewCell {
+class StoryCollectionViewCell: UICollectionViewCell {
     var imageView: UIImageView!
+    var title: UILabel!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,8 +21,16 @@ class PostImageCollectionViewCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
+        title.removeFromSuperview()
+        title = nil
+        
         imageView.removeFromSuperview()
         imageView = nil
+    }
+
+    func setupCell(post: Sneaker) {
+        setupImage(image: post.image)
+        setupText(text: post.year)
     }
     
     func setupImage(image: String) {
@@ -34,5 +43,11 @@ class PostImageCollectionViewCell: UICollectionViewCell {
         }
         imageView.contentMode = .scaleAspectFit
         contentView.addSubview(imageView)
+    }
+    
+    func setupText(text: String) {
+        title = UILabel()
+        title.text = text
+        contentView.addSubview(title)
     }
 }
