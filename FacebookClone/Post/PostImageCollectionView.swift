@@ -28,15 +28,19 @@ class PostImageCollectionView: UICollectionView, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row == 0 || indexPath.row == 1 {
-            let width = (frame.width / 2) - 5
+        if images.count > 1 {
+            if indexPath.row == 0 || indexPath.row == 1 {
+                let width = (frame.width / 2) - 5
+                let height = width * 0.75
+                return .init(width: width, height: height)
+            }
+            let cellSpacing: CGFloat = 3
+            let width = frame.width / cellSpacing - 8.75
             let height = width * 0.75
             return .init(width: width, height: height)
+        } else {
+            return .init(width: frame.width, height: frame.height)
         }
-        let cellSpacing: CGFloat = 3
-        let width = frame.width / cellSpacing - 8.75
-        let height = width * 0.75
-        return .init(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

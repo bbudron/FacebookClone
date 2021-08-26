@@ -10,7 +10,7 @@ import UIKit
 class PostHeaderStackView: UIStackView {
     var nameDateStackView: UIStackView!
 
-    var profileImageView: UIImageView!
+    var profileImageView: UIButton!
     var profileImage: String!
     
     var nameLabel: UILabel!
@@ -19,10 +19,15 @@ class PostHeaderStackView: UIStackView {
     var dateLabel: UILabel!
     var date: String!
     
-    init(frame: CGRect, profileImage: String, name: String, date: String) {
+    var model: Int!
+    var index: Int!
+
+    init(frame: CGRect, profileImage: String, model: Int, index: Int, name: String, date: String) {
         self.profileImage = profileImage
         self.name = name
         self.date = date
+        self.model = model
+        self.index = index
         super.init(frame: frame)
         
         translatesAutoresizingMaskIntoConstraints = false
@@ -59,17 +64,32 @@ class PostHeaderStackView: UIStackView {
         
         nameDateStackView.removeFromSuperview()
         nameDateStackView = nil
+        
+        model = nil
+        index = nil
     }
     
     func setupProfileImageView() {
-        profileImageView = UIImageView()
+        profileImageView = UIButton()
         profileImageView.backgroundColor = .gray
+        profileImageView.addTarget(self, action: #selector(favorite), for: .touchUpInside)
         addArrangedSubview(profileImageView)
         NSLayoutConstraint.activate([
             profileImageView.topAnchor.constraint(equalTo: topAnchor),
             profileImageView.heightAnchor.constraint(equalToConstant: 40),
             profileImageView.widthAnchor.constraint(equalToConstant: 40)
         ])
+    }
+    
+    @objc func favorite() {
+        NotificationCenter.default.post(
+            name: NSNotification.Name(rawValue: "toggleFavorite"),
+            object: nil,
+            userInfo: [
+                "model": model,
+                "index": index
+            ]
+        )
     }
     
     func setupNameLabel() {

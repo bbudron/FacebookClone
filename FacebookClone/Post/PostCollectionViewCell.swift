@@ -40,7 +40,7 @@ class PostCollectionViewCell: UICollectionViewCell {
         postTitle = UILabel()
         postTitle.text = post.title
         
-        postHeaderStackView = PostHeaderStackView(frame: frame, profileImage: post.profileImage, name: post.name, date: post.date)
+        postHeaderStackView = PostHeaderStackView(frame: frame, profileImage: post.profileImage, model: post.model, index: post.index, name: post.name, date: post.date)
         
         postImageCollectionView = PostImageCollectionView(frame: frame, collectionViewLayout: UICollectionViewFlowLayout(), images: post.images)
         

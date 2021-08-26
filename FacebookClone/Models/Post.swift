@@ -8,7 +8,8 @@
 import UIKit
 
 struct Post: Codable {
-    let id: String
+    let model: Int
+    let index: Int
     let name: String
     let date: String
     let title: String

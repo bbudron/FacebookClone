@@ -16,11 +16,12 @@ class HomeViewController: UIViewController {
     var storyCollectionView: StoryCollectionView!
     var navigationView: UIView!
     var sneakers: UIButton!
-    var favorites: UIButton!
+    var favoritesTab: UIButton!
     var favoritesView = FavoritesTableView()
 
     var postCollectionView: PostCollectionView!
     var sneakerCollection: [[Sneaker]] = []
+    var favorites: [[Sneaker]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,45 @@ class HomeViewController: UIViewController {
         setupStoryCollectionView()
         setupNavigationView()
         setupPostCollectionView()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(toggleFavorite(_:)),
+            name: NSNotification.Name(rawValue: "toggleFavorite"),
+            object: nil
+        )
+    }
+    
+
+    
+    @objc func toggleFavorite(_ notification: NSNotification) {
+        if let dict = notification.userInfo as NSDictionary? {
+            
+            if let model = dict["model"] as? Int,
+               let index = dict["index"] as? Int {
+                
+                let style = sneakerCollection[model]
+                let sneaker = style[index]
+                print("nidex", sneaker)
+//                sneakerCollection = fetchKicks()
+
+//                let posts: [Post] = sneakerCollection[model].map { sneaker in
+//                    Post.init(
+//                        id: "1",
+//                        name: sneaker.name,
+//                        date: sneaker.year,
+//                        title: sneaker.color,
+//                        profileImage: "Jordan1_2",
+//                        images: [sneaker.image]
+//                    )
+//                }
+//                postCollectionView.reloadData(posts: posts)
+            } else {
+                fatalError()
+            }
+        } else {
+            fatalError()
+        }
     }
     
     func setupStoryCollectionView() {
@@ -40,7 +80,7 @@ class HomeViewController: UIViewController {
         )
         layout.scrollDirection = .horizontal
         
-        let thumbnails = extractRandomThumbnails()
+        let thumbnails = extractThumbnails()
         
         storyCollectionView = StoryCollectionView(frame: view.frame, collectionViewLayout: layout, items: thumbnails)
         view.addSubview(storyCollectionView)
@@ -91,29 +131,29 @@ class HomeViewController: UIViewController {
             sneakers.trailingAnchor.constraint(equalTo: navigationView.centerXAnchor)
         ])
         
-        favorites = UIButton()
-        favorites.backgroundColor = .gray
-        favorites.translatesAutoresizingMaskIntoConstraints = false
-        favorites.addTarget(self, action: #selector(setupFavoritesView), for: .allEvents)
-        navigationView.addSubview(favorites)
+        favoritesTab = UIButton()
+        favoritesTab.backgroundColor = .gray
+        favoritesTab.translatesAutoresizingMaskIntoConstraints = false
+        favoritesTab.addTarget(self, action: #selector(setupFavoritesView), for: .allEvents)
+        navigationView.addSubview(favoritesTab)
         NSLayoutConstraint.activate([
-            favorites.topAnchor.constraint(equalTo: navigationView.topAnchor),
-            favorites.bottomAnchor.constraint(equalTo: navigationView.bottomAnchor),
-            favorites.leadingAnchor.constraint(equalTo: navigationView.centerXAnchor),
-            favorites.trailingAnchor.constraint(equalTo: navigationView.trailingAnchor)
+            favoritesTab.topAnchor.constraint(equalTo: navigationView.topAnchor),
+            favoritesTab.bottomAnchor.constraint(equalTo: navigationView.bottomAnchor),
+            favoritesTab.leadingAnchor.constraint(equalTo: navigationView.centerXAnchor),
+            favoritesTab.trailingAnchor.constraint(equalTo: navigationView.trailingAnchor)
         ])
     }
     
     @objc func displaySneakers() {
         sneakers.backgroundColor = .white
-        favorites.backgroundColor = .gray
+        favoritesTab.backgroundColor = .gray
         
         favoritesView.removeFromSuperview()
     }
     
     @objc func setupFavoritesView() {
         sneakers.backgroundColor = .gray
-        favorites.backgroundColor = .white
+        favoritesTab.backgroundColor = .white
         
         view.addSubview(favoritesView)
         NSLayoutConstraint.activate([
@@ -132,14 +172,16 @@ class HomeViewController: UIViewController {
         )
         layout.scrollDirection = .vertical
         
-        let posts: [Post] = sneakerCollection[0].map { sneaker in
+        
+        let posts: [Post] = sneakerCollection[0].enumerated().map { index, sneaker in
             Post.init(
-                id: "1",
+                model: 0,
+                index: index,
                 name: sneaker.name,
                 date: sneaker.year,
                 title: sneaker.color,
                 profileImage: "Jordan1_2",
-                images: [sneaker.image, "Jordan1_3", "Jordan1_2", "Jordan1_3", "Jordan1_1"]
+                images: [sneaker.image]
             )
         }
         
@@ -163,17 +205,17 @@ class HomeViewController: UIViewController {
     @objc func changedModel(_ notification: NSNotification) {
         if let dict = notification.userInfo as NSDictionary? {
             if let model = dict["model"] as? Int {
-                
                 sneakerCollection = fetchKicks()
                 
-                let posts: [Post] = sneakerCollection[model].map { sneaker in
+                let posts: [Post] = sneakerCollection[model].enumerated().map { index, sneaker in
                     Post.init(
-                        id: "1",
+                        model: model,
+                        index: index,
                         name: sneaker.name,
                         date: sneaker.year,
                         title: sneaker.color,
                         profileImage: "Jordan1_2",
-                        images: [sneaker.image, "Jordan1_3", "Jordan1_2", "Jordan1_3", "Jordan1_1"]
+                        images: [sneaker.image]
                     )
                 }
                 postCollectionView.reloadData(posts: posts)
