@@ -16,11 +16,38 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .init(white: 0.9, alpha: 1)
         
+        setupNavBar()
         sneakers = fetchKicks(jordan: 1)
         setupStoryCollectionView()
         setupPostCollectionView()
     }
     
+    func setupNavBar() {
+        let fbLogoImageView = UIImageView(image: UIImage(named: "Jordan1_2"))
+        fbLogoImageView.contentMode = .scaleAspectFit
+        fbLogoImageView.translatesAutoresizingMaskIntoConstraints = false
+
+        let titleView = UIView()
+        titleView.backgroundColor = .yellow
+        titleView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 50)
+        titleView.translatesAutoresizingMaskIntoConstraints = false
+        titleView.addSubview(fbLogoImageView)
+
+        NSLayoutConstraint.activate([
+            fbLogoImageView.topAnchor.constraint(equalTo: titleView.topAnchor),
+            fbLogoImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
+            fbLogoImageView.widthAnchor.constraint(equalTo: titleView.widthAnchor),
+            fbLogoImageView.heightAnchor.constraint(equalTo: titleView.heightAnchor)
+        ])
+
+        navigationItem.titleView = titleView
+        navigationItem.title = "FUUUU"
+        
+        NSLayoutConstraint.activate([
+            titleView.widthAnchor.constraint(equalToConstant: 120)
+        ])
+    }
+
     func setupStoryCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(
@@ -29,7 +56,7 @@ class HomeViewController: UIViewController {
         )
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 15)
-        
+
         storyCollectionView = StoryCollectionView(frame: view.frame, collectionViewLayout: layout, items: sneakers)
         view.addSubview(storyCollectionView)
         NSLayoutConstraint.activate([
