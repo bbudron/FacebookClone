@@ -7,11 +7,6 @@
 
 import UIKit
 
-
-//protocol SelectedModel {
-//    func changeModel(jordan: Int) -> Void
-//}
-
 class HomeViewController: UIViewController {
     var storyCollectionView: StoryCollectionView!
     var postCollectionView: PostCollectionView!
@@ -33,6 +28,7 @@ class HomeViewController: UIViewController {
             height: 150
         )
         layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 15)
         
         storyCollectionView = StoryCollectionView(frame: view.frame, collectionViewLayout: layout, items: sneakers)
         view.addSubview(storyCollectionView)

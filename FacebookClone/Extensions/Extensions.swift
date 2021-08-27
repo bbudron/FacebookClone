@@ -21,6 +21,7 @@ extension UIImageView {
    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
       URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
    }
+    
    func downloadImage(from url: URL) {
       getData(from: url) {
          data, response, error in

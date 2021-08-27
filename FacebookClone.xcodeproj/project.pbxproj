@@ -43,6 +43,7 @@
 		C259413126D21186005984E6 /* jordan9.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411A26D21186005984E6 /* jordan9.csv */; };
 		C259413226D21186005984E6 /* jordan17.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411B26D21186005984E6 /* jordan17.csv */; };
 		C259413326D21186005984E6 /* jordan21.csv in Resources */ = {isa = PBXBuildFile; fileRef = C259411C26D21186005984E6 /* jordan21.csv */; };
+		C278A4C526D7444A004DD754 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C278A4C426D7444A004DD754 /* StoryCollectionViewCell.swift */; };
 		C2AE00C326CC8FB700BF56C4 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE00C226CC8FB700BF56C4 /* PostCollectionViewCell.swift */; };
 		C2AE00C726CC942100BF56C4 /* PostImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE00C626CC942100BF56C4 /* PostImageCollectionViewCell.swift */; };
 		C2AE00C926CC947C00BF56C4 /* PostCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AE00C826CC947C00BF56C4 /* PostCollectionView.swift */; };
@@ -93,6 +94,7 @@
 		C259411A26D21186005984E6 /* jordan9.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan9.csv; sourceTree = "<group>"; };
 		C259411B26D21186005984E6 /* jordan17.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan17.csv; sourceTree = "<group>"; };
 		C259411C26D21186005984E6 /* jordan21.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jordan21.csv; sourceTree = "<group>"; };
+		C278A4C426D7444A004DD754 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2AE00C226CC8FB700BF56C4 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2AE00C626CC942100BF56C4 /* PostImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C2AE00C826CC947C00BF56C4 /* PostCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C25940E826D0B937005984E6 /* StoryCollectionView.swift */,
+				C278A4C426D7444A004DD754 /* StoryCollectionViewCell.swift */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				C2DD387B26CB3F3800216ED4 /* HomeViewController.swift in Sources */,
 				C2DD386726CB3EE100216ED4 /* AppDelegate.swift in Sources */,
 				C25940E926D0B937005984E6 /* StoryCollectionView.swift in Sources */,
+				C278A4C526D7444A004DD754 /* StoryCollectionViewCell.swift in Sources */,
 				C2DD386926CB3EE100216ED4 /* SceneDelegate.swift in Sources */,
 				C2AE00CE26CC9A5700BF56C4 /* PostHeaderStackView.swift in Sources */,
 				C2AE00C926CC947C00BF56C4 /* PostCollectionView.swift in Sources */,
