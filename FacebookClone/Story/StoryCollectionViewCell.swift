@@ -15,6 +15,11 @@ class StoryCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        layer.shadowRadius = 1.25
+        layer.shadowOpacity = 0.4
+        layer.masksToBounds = false
     }
     
     required init?(coder: NSCoder) {

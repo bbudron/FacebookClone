@@ -8,13 +8,13 @@
 import UIKit
 
 class StoryCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
-    let items : [Sneaker]
+    let items : [Post]
 
-    init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout, items: [Sneaker]) {
+    init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout, items: [Post]) {
         self.items = items
         super.init(frame: frame, collectionViewLayout: layout)
         register(StoryCollectionViewCell.self, forCellWithReuseIdentifier: "StoryCollectionViewCell")
-        backgroundColor = .init(white: 0.9, alpha: 1)
+        backgroundColor = .white
         translatesAutoresizingMaskIntoConstraints = false
         dataSource = self
         delegate = self
@@ -25,12 +25,12 @@ class StoryCollectionView: UICollectionView, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 23
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryCollectionViewCell", for: indexPath) as! StoryCollectionViewCell
-        cell.setupCell(post: Post.init(id: "gay", name: "game", date: "ga", title: "ga", profileImage: "ga", images: ["ga"]))
+        cell.setupCell(post: items[indexPath.row])
         return cell
     }
     

@@ -4,50 +4,81 @@
 //
 //  Created by Brandon B on 8/16/21.
 //
-
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, ChangeTabDelegate {
+    let scrollView = UIScrollView()
+
+    let scrollViewContainer = UIStackView()
+    
+    var sneakers: [Post] = []
+    
+    let navigationBar = UIView()
+    let headerView = HeaderView()
+    let fbLogoImageView = UIImageView(image: UIImage(named: "Facebook"))
+    let messengerButton = UIButton()
+    let searchButton = UIButton()
+    
     var storyCollectionView: StoryCollectionView!
     var postCollectionView: PostCollectionView!
-    var sneakers: [Sneaker] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .init(white: 0.9, alpha: 1)
-        
-        setupNavBar()
+        navigationController?.isNavigationBarHidden = true
+
         sneakers = fetchKicks(jordan: 1)
+
+        setupNavBar()
+        setupScrollView()
+                
         setupStoryCollectionView()
         setupPostCollectionView()
     }
     
     func setupNavBar() {
-        let fbLogoImageView = UIImageView(image: UIImage(named: "Jordan1_2"))
-        fbLogoImageView.contentMode = .scaleAspectFit
-        fbLogoImageView.translatesAutoresizingMaskIntoConstraints = false
+        let safeAreaTop = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.safeAreaInsets.top ?? 0
 
-        let titleView = UIView()
-        titleView.backgroundColor = .yellow
-        titleView.frame = .init(x: 0, y: 0, width: view.frame.width, height: 50)
-        titleView.translatesAutoresizingMaskIntoConstraints = false
-        titleView.addSubview(fbLogoImageView)
-
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.backgroundColor = .white
+        headerView.delegate = self
+        view.addSubview(headerView)
         NSLayoutConstraint.activate([
-            fbLogoImageView.topAnchor.constraint(equalTo: titleView.topAnchor),
-            fbLogoImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor),
-            fbLogoImageView.widthAnchor.constraint(equalTo: titleView.widthAnchor),
-            fbLogoImageView.heightAnchor.constraint(equalTo: titleView.heightAnchor)
-        ])
-
-        navigationItem.titleView = titleView
-        navigationItem.title = "FUUUU"
-        
-        NSLayoutConstraint.activate([
-            titleView.widthAnchor.constraint(equalToConstant: 120)
+            headerView.topAnchor.constraint(equalTo: view.topAnchor),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerView.heightAnchor.constraint(equalToConstant: 100 + safeAreaTop)
         ])
     }
-
+    
+    func changeTab(changeTo tab: Tabs) {
+        print("you really changed the game \(tab)")
+    }
+    
+    func setupScrollView() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.backgroundColor = .white
+        view.addSubview(scrollView)
+        NSLayoutConstraint.activate([
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.topAnchor.constraint(equalTo: headerView.bottomAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
+        scrollViewContainer.axis = .vertical
+        scrollViewContainer.spacing = 10
+        scrollViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(scrollViewContainer)
+        NSLayoutConstraint.activate([
+            scrollViewContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            scrollViewContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            scrollViewContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            scrollViewContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            scrollViewContainer.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+        ])
+    }
+    
     func setupStoryCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(
@@ -55,15 +86,14 @@ class HomeViewController: UIViewController {
             height: 150
         )
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 15)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 15)
 
         storyCollectionView = StoryCollectionView(frame: view.frame, collectionViewLayout: layout, items: sneakers)
-        view.addSubview(storyCollectionView)
+        scrollViewContainer.addArrangedSubview(storyCollectionView)
         NSLayoutConstraint.activate([
-            storyCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            storyCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            storyCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            storyCollectionView.heightAnchor.constraint(equalToConstant: layout.itemSize.height)
+            storyCollectionView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor),
+            storyCollectionView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor),
+            storyCollectionView.heightAnchor.constraint(equalToConstant: 160)
         ])
     }
     
@@ -75,24 +105,13 @@ class HomeViewController: UIViewController {
         )
         layout.scrollDirection = .vertical
         
-        let posts: [Post] = sneakers.map { sneaker in
-            Post.init(
-                id: "1",
-                name: sneaker.name,
-                date: "66.66.6666",
-                title: sneaker.price,
-                profileImage: "Jordan1_2",
-                images: [sneaker.pic, "Jordan1_3", "Jordan1_2", "Jordan1_3", "Jordan1_1"]
-            )
-        }
-        
-        postCollectionView = PostCollectionView(frame: self.view.frame, collectionViewLayout: layout, posts: posts)
-        view.addSubview(postCollectionView)
+        postCollectionView = PostCollectionView(frame: view.frame, collectionViewLayout: layout, posts: sneakers)
+        postCollectionView.isScrollEnabled = false
+        scrollViewContainer.addArrangedSubview(postCollectionView)
         NSLayoutConstraint.activate([
-            postCollectionView.topAnchor.constraint(equalTo: storyCollectionView.bottomAnchor, constant: 10),
-            postCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            postCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            postCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            postCollectionView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor),
+            postCollectionView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor),
+            postCollectionView.heightAnchor.constraint(equalToConstant: layout.itemSize.height * CGFloat(sneakers.count))
         ])
         
         NotificationCenter.default.addObserver(
@@ -106,20 +125,8 @@ class HomeViewController: UIViewController {
     @objc func changedModel(_ notification: NSNotification) {
         if let dict = notification.userInfo as NSDictionary? {
             if let model = dict["model"] as? Int {
-                
                 sneakers = fetchKicks(jordan: model)
-                
-                let posts: [Post] = sneakers.map { sneaker in
-                    Post.init(
-                        id: "1",
-                        name: sneaker.name,
-                        date: "66.66.6666",
-                        title: sneaker.price,
-                        profileImage: "Jordan1_2",
-                        images: [sneaker.pic, "Jordan1_3", "Jordan1_2", "Jordan1_3", "Jordan1_1"]
-                    )
-                }
-                postCollectionView.reloadData(posts: posts)
+                postCollectionView.reloadData(posts: sneakers)
             } else {
                 fatalError()
             }
@@ -129,30 +136,13 @@ class HomeViewController: UIViewController {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-struct Sneaker: Codable {
-    let name : String
-    let price : String
-    let pic : String
-    let url : String
-}
-
-func fetchKicks(jordan: Int) -> [Sneaker] {
-    let filename = Bundle.main.path(forResource: "jordan\(jordan)s", ofType: "csv")
+func fetchKicks(jordan: Int) -> [Post] {
+    let filename = Bundle.main.path(forResource: "jordan\(jordan)", ofType: "csv")
 
     do {
         let content = try String(contentsOfFile: filename!)
         
-        var parsedCSV: [Sneaker] = []
+        var parsedCSV: [Post] = []
         
         content.components(separatedBy: "\n")
         .forEach({ row in
@@ -165,11 +155,13 @@ func fetchKicks(jordan: Int) -> [Sneaker] {
             
             if let name = name, let price = price, let pic = pic, let url = url {
                 parsedCSV.append(
-                    Sneaker.init(
+                    Post.init(
+                        id: "1",
                         name: name.replacingOccurrences(of: "\"", with: ""),
-                        price: price.replacingOccurrences(of: "\"", with: ""),
-                        pic: pic.replacingOccurrences(of: "\"", with: ""),
-                        url: url
+                        date: url,
+                        title: price.replacingOccurrences(of: "\"", with: ""),
+                        profileImage: pic.replacingOccurrences(of: "\"", with: ""),
+                        images: [pic.replacingOccurrences(of: "\"", with: ""), "Jordan1_3", "Jordan1_2", "Jordan1_3", "Jordan1_1"]
                     )
                 )
             }

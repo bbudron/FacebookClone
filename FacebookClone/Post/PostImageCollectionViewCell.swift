@@ -26,9 +26,8 @@ class PostImageCollectionViewCell: UICollectionViewCell {
     
     func setupImage(image: String) {
         imageView = UIImageView(frame: bounds)
-        let url = URL(string: image)!
+        let url = (URL(string: image) ?? URL(string: "Jordan1_3"))!
         imageView.downloadImage(from: url)
-//        imageView.image = UIImage(named: "Jordan1_3")
         imageView.contentMode = .scaleAspectFit
         contentView.addSubview(imageView)
     }
