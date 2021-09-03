@@ -20,6 +20,7 @@ class HomeViewController: UIViewController, ChangeTabDelegate {
     let searchButton = UIButton()
     
     var storyCollectionView: StoryCollectionView!
+    var newPostView = NewPostView()
     var postCollectionView: PostCollectionView!
 
     override func viewDidLoad() {
@@ -33,6 +34,7 @@ class HomeViewController: UIViewController, ChangeTabDelegate {
         setupScrollView()
                 
         setupStoryCollectionView()
+        setupNewPostView()
         setupPostCollectionView()
     }
     
@@ -94,6 +96,15 @@ class HomeViewController: UIViewController, ChangeTabDelegate {
             storyCollectionView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor),
             storyCollectionView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor),
             storyCollectionView.heightAnchor.constraint(equalToConstant: 160)
+        ])
+    }
+    
+    func setupNewPostView() {
+        scrollViewContainer.addArrangedSubview(newPostView)
+        NSLayoutConstraint.activate([
+            newPostView.leadingAnchor.constraint(equalTo: scrollViewContainer.leadingAnchor),
+            newPostView.trailingAnchor.constraint(equalTo: scrollViewContainer.trailingAnchor),
+            newPostView.heightAnchor.constraint(equalToConstant: 65)
         ])
     }
     

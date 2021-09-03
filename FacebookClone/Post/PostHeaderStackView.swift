@@ -63,7 +63,10 @@ class PostHeaderStackView: UIStackView {
     
     func setupProfileImageView() {
         profileImageView = UIImageView()
-        profileImageView.backgroundColor = .gray
+        profileImageView.backgroundColor = .systemGray
+        profileImageView.layer.masksToBounds = false
+        profileImageView.layer.cornerRadius = 20
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
         addArrangedSubview(profileImageView)
         NSLayoutConstraint.activate([
             profileImageView.topAnchor.constraint(equalTo: topAnchor),
