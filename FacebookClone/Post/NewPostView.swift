@@ -12,7 +12,7 @@ class NewPostView: UIStackView {
     let profilePicture = UIView()
     
     let creatNewPostContainer = UIView()
-    let creatNewPost = UIStackView()
+    let creatNewPostStack = UIStackView()
     let createNewPostImage = UIImageView()
     let createNewPostLabel = UILabel()
 
@@ -50,14 +50,15 @@ class NewPostView: UIStackView {
             creatNewPostContainer.leadingAnchor.constraint(equalTo: profilePictureContainer.trailingAnchor),
             creatNewPostContainer.trailingAnchor.constraint(equalTo: uploadImageContainer.leadingAnchor),
 
-            creatNewPost.topAnchor.constraint(equalTo: creatNewPostContainer.topAnchor, constant: 10),
-            creatNewPost.bottomAnchor.constraint(equalTo: creatNewPostContainer.bottomAnchor, constant: -10),
-            creatNewPost.leadingAnchor.constraint(equalTo: creatNewPostContainer.leadingAnchor),
-            creatNewPost.trailingAnchor.constraint(equalTo: creatNewPostContainer.trailingAnchor),
-            
-            
-            createNewPostImage.widthAnchor.constraint(equalToConstant: 50),
-            createNewPostImage.heightAnchor.constraint(equalToConstant: 50),
+            creatNewPostStack.topAnchor.constraint(equalTo: creatNewPostContainer.topAnchor, constant: 20),
+            creatNewPostStack.bottomAnchor.constraint(equalTo: creatNewPostContainer.bottomAnchor, constant: -20),
+            creatNewPostStack.centerXAnchor.constraint(equalTo: creatNewPostContainer.centerXAnchor),
+//            creatNewPost.leadingAnchor.constraint(equalTo: creatNewPostContainer.leadingAnchor),
+//            creatNewPost.trailingAnchor.constraint(equalTo: creatNewPostContainer.trailingAnchor),
+
+
+            createNewPostImage.widthAnchor.constraint(equalToConstant: 25),
+//            createNewPostImage.heightAnchor.constraint(equalToConstant: 20),
 //            createNewPostLabel.centerYAnchor.constraint(equalTo: creatNewPost.centerYAnchor),
 //            createNewPostLabel.centerXAnchor.constraint(equalTo: creatNewPost.centerXAnchor),
 
@@ -86,25 +87,24 @@ class NewPostView: UIStackView {
     }
     
     func setupCreateNewPost() {
-        creatNewPostContainer.backgroundColor = .none
+        creatNewPostContainer.backgroundColor = .systemGray
+        creatNewPostContainer.layer.cornerRadius = 10
         creatNewPostContainer.translatesAutoresizingMaskIntoConstraints = false
         addArrangedSubview(creatNewPostContainer)
         
-        creatNewPost.backgroundColor = .systemGray
-        creatNewPost.layer.cornerRadius = 10
-        creatNewPost.axis = .horizontal
-        creatNewPost.alignment = .center
-        creatNewPost.distribution = .equalCentering
-        creatNewPost.translatesAutoresizingMaskIntoConstraints = false
-        creatNewPostContainer.addSubview(creatNewPost)
+        creatNewPostStack.backgroundColor = .none
+        creatNewPostStack.axis = .horizontal
+        creatNewPostStack.spacing = 10
+        creatNewPostStack.translatesAutoresizingMaskIntoConstraints = false
+        creatNewPostContainer.addSubview(creatNewPostStack)
         
         createNewPostImage.image = UIImage(named: "Post")
         createNewPostImage.translatesAutoresizingMaskIntoConstraints = false
-        creatNewPost.addArrangedSubview(createNewPostImage)
+        creatNewPostStack.addArrangedSubview(createNewPostImage)
         
         createNewPostLabel.text = "Create new post"
-        createNewPostLabel.translatesAutoresizingMaskIntoConstraints = false
-        creatNewPost.addArrangedSubview(createNewPostLabel)
+//        createNewPostLabel.translatesAutoresizingMaskIntoConstraints = false
+        creatNewPostStack.addArrangedSubview(createNewPostLabel)
     }
     
     func setupUploadImage() {
